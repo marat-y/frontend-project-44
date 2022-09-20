@@ -1,0 +1,32 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "Brain Games",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marat-y/frontend-project-44.git"
+  },
+  "author": "Marat Yamaliev <marat.yamaliev@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marat-y/frontend-project-44/issues"
+  },
+  "homepage": "https://github.com/marat-y/frontend-project-44#readme",
+  "bin": {
+    "brain-games": "bin/brain-games.js",
+    "brain-even": "bin/brain-even.js"
+  },
+  "dependencies": {
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "eslint": "^8.23.1"
+  }
+}
