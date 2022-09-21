@@ -6,8 +6,8 @@ const description = 'What is the result of the expression?';
 
 const getQuestionAttrs = () => {
   const operators = ['*', '-', '+'];
-  const int1 = getRandomNumber();
-  const int2 = getRandomNumber();
+  const int1 = getRandomNumber(10);
+  const int2 = getRandomNumber(10);
   const operator = operators[Math.floor(Math.random() * operators.length)];
   const questionContent = `${int1} ${operator} ${int2}`;
   let correctAnswer;

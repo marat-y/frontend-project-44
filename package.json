@@ -21,6 +21,7 @@
     "brain-games": "bin/games/brain-games.js",
     "brain-even": "bin/games/brain-even.js",
     "brain-gdc": "bin/games/brain-gdc.js",
+    "brain-progression": "bin/games/brain-progression.js",
     "brain-calc": "bin/games/brain-calc.js"
   },
   "dependencies": {

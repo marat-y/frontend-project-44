@@ -39,4 +39,4 @@ export const runGame = (description, questionFunction) => {
   correctAnswersCount === neededAnswersCount ? wonGame(userName) : lostGame(userName);
 };
 
-export const getRandomNumber = () => Math.round(Math.random() * 100);
+export const getRandomNumber = (max) => Math.round(Math.random() * max);
