@@ -36,7 +36,11 @@ export const runGame = (description, questionFunction) => {
     }
   }
 
-  correctAnswersCount === neededAnswersCount ? wonGame(userName) : lostGame(userName);
+  if (correctAnswersCount === neededAnswersCount) {
+    wonGame(userName);
+  } else {
+    lostGame(userName);
+  }
 };
 
 export const getRandomNumber = (max) => Math.round(Math.random() * max);
