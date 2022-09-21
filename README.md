@@ -6,3 +6,4 @@ Games:
 - [brain-calc](https://asciinema.org/a/522875)
 - [brain-gdc](https://asciinema.org/a/522881)
 - [brain-progression](https://asciinema.org/a/522890)
+- [brain-prime](https://asciinema.org/a/522891)
