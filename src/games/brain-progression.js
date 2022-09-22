@@ -13,7 +13,7 @@ const getQuestionAttrs = () => {
     progression.push(progression[progression.length - 1] + progressBy);
   }
 
-  const hiddenPosition = Math.floor(getRandomNumber());
+  const hiddenPosition = getRandomNumber(0, 9);
 
   const correctAnswer = progression[hiddenPosition];
 
