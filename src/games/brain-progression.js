@@ -1,20 +1,19 @@
-#!/usr/bin/env node
-
-import { runGame, getRandomNumber } from '../../src/index.js';
+import runGame from '../index.js';
+import { getRandomNumber } from '../cli.js';
 
 const description = 'What number is missing in the progression?';
 
 const getQuestionAttrs = () => {
   const maxProgressionLength = 10;
 
-  const progression = [getRandomNumber(10)];
-  const progressBy = getRandomNumber(10);
+  const progression = [getRandomNumber()];
+  const progressBy = getRandomNumber();
 
   while (progression.length < maxProgressionLength) {
     progression.push(progression[progression.length - 1] + progressBy);
   }
 
-  const hiddenPosition = Math.floor(getRandomNumber(10));
+  const hiddenPosition = Math.floor(getRandomNumber());
 
   const correctAnswer = progression[hiddenPosition];
 
@@ -25,4 +24,8 @@ const getQuestionAttrs = () => {
   return [questionContent, correctAnswer.toString()];
 };
 
-runGame(description, getQuestionAttrs);
+const play = () => {
+  runGame(description, getQuestionAttrs);
+};
+
+export default play;

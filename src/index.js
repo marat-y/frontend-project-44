@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const getUserName = () => readlineSync.question('May I have your name? ');
+// const getUserName = () => ;
 
 const askQuestion = (questionContent) => {
   console.log(`Question: ${questionContent}`);
@@ -16,9 +16,9 @@ const lostGame = (name) => {
   console.log(`Let's try again, ${name}!`);
 };
 
-export const runGame = (description, questionFunction) => {
+const runGame = (description, questionFunction) => {
   console.log('Welcome to the Brain Games!');
-  const userName = getUserName();
+  const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log(description);
   let correctAnswersCount = 0;
@@ -43,4 +43,4 @@ export const runGame = (description, questionFunction) => {
   }
 };
 
-export const getRandomNumber = (max) => Math.round(Math.random() * max);
+export default runGame;

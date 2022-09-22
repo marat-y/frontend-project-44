@@ -1,13 +1,12 @@
-#!/usr/bin/env node
-
-import { runGame, getRandomNumber } from '../../src/index.js';
+import runGame from '../index.js';
+import { getRandomNumber } from '../cli.js';
 
 const description = 'What is the result of the expression?';
 
 const getQuestionAttrs = () => {
   const operators = ['*', '-', '+'];
-  const int1 = getRandomNumber(10);
-  const int2 = getRandomNumber(10);
+  const int1 = getRandomNumber();
+  const int2 = getRandomNumber();
   const operator = operators[Math.floor(Math.random() * operators.length)];
   const questionContent = `${int1} ${operator} ${int2}`;
   let correctAnswer;
@@ -28,4 +27,8 @@ const getQuestionAttrs = () => {
   return [questionContent, correctAnswer.toString()];
 };
 
-runGame(description, getQuestionAttrs);
+const play = () => {
+  runGame(description, getQuestionAttrs);
+};
+
+export default play;

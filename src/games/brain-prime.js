@@ -1,11 +1,10 @@
-#!/usr/bin/env node
-
-import { runGame, getRandomNumber } from '../../src/index.js';
+import runGame from '../index.js';
+import { getRandomNumber } from '../cli.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const getQuestionAttrs = () => {
-  const number = getRandomNumber(100) + 2;
+  const number = getRandomNumber(2, 100);
   const validPrimeDividers = [1, number];
   const questionContent = number;
   let isPrime = 'yes';
@@ -20,4 +19,8 @@ const getQuestionAttrs = () => {
   return [questionContent, correctAnswer];
 };
 
-runGame(description, getQuestionAttrs);
+const play = () => {
+  runGame(description, getQuestionAttrs);
+};
+
+export default play;

@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "Brain Games",
-  "main": "index.js",
+  "main": "./bin/brain-games.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,12 +18,12 @@
   },
   "homepage": "https://github.com/marat-y/frontend-project-44#readme",
   "bin": {
-    "brain-games": "bin/games/brain-games.js",
-    "brain-even": "bin/games/brain-even.js",
-    "brain-gcd": "bin/games/brain-gcd.js",
-    "brain-prime": "bin/games/brain-prime.js",
-    "brain-progression": "bin/games/brain-progression.js",
-    "brain-calc": "bin/games/brain-calc.js"
+    "brain-games": "bin/brain-games.js",
+    "brain-even": "bin/brain-even.js",
+    "brain-gcd": "bin/brain-gcd.js",
+    "brain-prime": "bin/brain-prime.js",
+    "brain-progression": "bin/brain-progression.js",
+    "brain-calc": "bin/brain-calc.js"
   },
   "dependencies": {
     "eslint-config-airbnb-base": "^15.0.0",
