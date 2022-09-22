@@ -3,11 +3,11 @@ import getRandomNumber from '../get-random.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const isPrime = (int) => {
-  const validPrimeDividers = [1, int];
+const isPrime = (integer) => {
+  const validPrimeDividers = [1, integer];
   let result = true;
-  for (let i = int; i >= 2; i -= 1) {
-    if (int % i === 0 && !(validPrimeDividers.includes(i))) {
+  for (let i = integer; i >= 2; i -= 1) {
+    if (integer % i === 0 && !(validPrimeDividers.includes(i))) {
       result = false;
       break;
     }

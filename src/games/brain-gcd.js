@@ -3,11 +3,11 @@ import getRandomNumber from '../get-random.js';
 
 const description = 'Find the greatest common divisor of given numbers.';
 
-const findGcd = (int1, int2) => {
-  let i = (int1 <= int2) ? int1 : int2;
+const findGcd = (integerOne, integerTwo) => {
+  let i = (integerOne <= integerTwo) ? integerOne : integerTwo;
   let gcd;
   while (i > 0) {
-    if ((int1 % i === 0) && (int2 % i === 0)) {
+    if ((integerOne % i === 0) && (integerTwo % i === 0)) {
       gcd = i;
       break;
     }
@@ -18,10 +18,10 @@ const findGcd = (int1, int2) => {
 };
 
 const getRoundData = () => {
-  const int1 = getRandomNumber(0, 100);
-  const int2 = getRandomNumber(0, 100);
-  const questionContent = `${int1} ${int2}`;
-  const correctAnswer = findGcd(int1, int2);
+  const integerOne = getRandomNumber(0, 100);
+  const integerTwo = getRandomNumber(0, 100);
+  const questionContent = `${integerOne} ${integerTwo}`;
+  const correctAnswer = findGcd(integerOne, integerTwo);
 
   return [questionContent, correctAnswer.toString()];
 };

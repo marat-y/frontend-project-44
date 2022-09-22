@@ -3,14 +3,14 @@ import getRandomNumber from '../get-random.js';
 
 const description = 'What is the result of the expression?';
 
-const calculate = (int1, int2, operator) => {
+const calculate = (integerOne, integerTwo, operator) => {
   switch (operator) {
     case '*':
-      return int1 * int2;
+      return integerOne * integerTwo;
     case '-':
-      return int1 - int2;
+      return integerOne - integerTwo;
     case '+':
-      return int1 + int2;
+      return integerOne + integerTwo;
     default:
       throw new Error("Wrong operator, should be '*', '-' or '+'");
   }
@@ -18,12 +18,12 @@ const calculate = (int1, int2, operator) => {
 
 const getRoundData = () => {
   const operators = ['*', '-', '+'];
-  const int1 = getRandomNumber();
-  const int2 = getRandomNumber();
-  const operatorIndex = Math.floor(Math.random() * operators.length);
+  const integerOne = getRandomNumber();
+  const integerTwo = getRandomNumber();
+  const operatorIndex = getRandomNumber(0, operators.length - 1);
   const operator = operators[operatorIndex];
-  const questionContent = `${int1} ${operator} ${int2}`;
-  const correctAnswer = calculate(int1, int2, operator);
+  const questionContent = `${integerOne} ${operator} ${integerTwo}`;
+  const correctAnswer = calculate(integerOne, integerTwo, operator);
 
   return [questionContent, correctAnswer.toString()];
 };

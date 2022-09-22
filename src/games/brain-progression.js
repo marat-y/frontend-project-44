@@ -3,11 +3,9 @@ import getRandomNumber from '../get-random.js';
 
 const description = 'What number is missing in the progression?';
 
-const getProgression = () => {
-  const maxProgressionLength = 10;
-  const progression = [getRandomNumber()];
-  const progressBy = getRandomNumber();
-  while (progression.length < maxProgressionLength) {
+const getProgression = (progressionLength, progressBy, startingInteger) => {
+  const progression = [startingInteger];
+  while (progression.length < progressionLength) {
     progression.push(progression[progression.length - 1] + progressBy);
   }
 
@@ -15,10 +13,15 @@ const getProgression = () => {
 };
 
 const getRoundData = () => {
-  const progression = getProgression();
-  const hiddenPosition = getRandomNumber(0, 9);
+  const progressBy = getRandomNumber();
+  const progressionLength = getRandomNumber(5, 10);
+  const startingInteger = getRandomNumber();
+  const progression = getProgression(progressionLength, progressBy, startingInteger);
+
+  const hiddenPosition = getRandomNumber(0, progressionLength - 1);
   const correctAnswer = progression[hiddenPosition];
   progression[hiddenPosition] = '..';
+
   const questionContent = progression.join(' ');
 
   return [questionContent, correctAnswer.toString()];
