@@ -1,34 +1,35 @@
 import runGame from '../index.js';
-import { getRandomNumber } from '../cli.js';
+import getRandomNumber from '../get-random.js';
 
 const description = 'What is the result of the expression?';
 
-const getQuestionAttrs = () => {
+const calculate = (int1, int2, operator) => {
+  switch (operator) {
+    case '*':
+      return int1 * int2;
+    case '-':
+      return int1 - int2;
+    case '+':
+      return int1 + int2;
+    default:
+      throw new Error("Wrong operator, should be '*', '-' or '+'");
+  }
+};
+
+const getRoundData = () => {
   const operators = ['*', '-', '+'];
   const int1 = getRandomNumber();
   const int2 = getRandomNumber();
-  const operator = operators[Math.floor(Math.random() * operators.length)];
+  const operatorIndex = Math.floor(Math.random() * operators.length);
+  const operator = operators[operatorIndex];
   const questionContent = `${int1} ${operator} ${int2}`;
-  let correctAnswer;
-  switch (operator) {
-    case '*':
-      correctAnswer = int1 * int2;
-      break;
-    case '-':
-      correctAnswer = int1 - int2;
-      break;
-    case '+':
-      correctAnswer = int1 + int2;
-      break;
-    default:
-      break;
-  }
+  const correctAnswer = calculate(int1, int2, operator);
 
   return [questionContent, correctAnswer.toString()];
 };
 
 const play = () => {
-  runGame(description, getQuestionAttrs);
+  runGame(description, getRoundData);
 };
 
 export default play;

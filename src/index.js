@@ -1,21 +1,5 @@
 import readlineSync from 'readline-sync';
 
-// const getUserName = () => ;
-
-const askQuestion = (questionContent) => {
-  console.log(`Question: ${questionContent}`);
-};
-
-const getUserAnswer = () => readlineSync.question('Your answer: ');
-
-const wonGame = (name) => {
-  console.log(`Congratulations, ${name}!`);
-};
-
-const lostGame = (name) => {
-  console.log(`Let's try again, ${name}!`);
-};
-
 const runGame = (description, questionFunction) => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
@@ -25,21 +9,21 @@ const runGame = (description, questionFunction) => {
   const neededAnswersCount = 3;
   while (correctAnswersCount < neededAnswersCount) {
     const [questionContent, correctAnswer] = questionFunction();
-    askQuestion(questionContent);
-    const userAnswer = getUserAnswer();
+    console.log(`Question: ${questionContent}`);
+    const userAnswer = readlineSync.question('Your answer: ');
     if (correctAnswer === userAnswer) {
       correctAnswersCount += 1;
       console.log('Correct!');
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      break;
+      break; // если поставить return, то не будет выводиться "Let's try again ..."
     }
   }
 
   if (correctAnswersCount === neededAnswersCount) {
-    wonGame(userName);
+    console.log(`Congratulations, ${userName}!`);
   } else {
-    lostGame(userName);
+    console.log(`Let's try again, ${userName}!`);
   }
 };
 

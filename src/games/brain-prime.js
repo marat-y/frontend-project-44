@@ -1,26 +1,31 @@
 import runGame from '../index.js';
-import { getRandomNumber } from '../cli.js';
+import getRandomNumber from '../get-random.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const getQuestionAttrs = () => {
-  const number = getRandomNumber(2, 100);
-  const validPrimeDividers = [1, number];
-  const questionContent = number;
-  let isPrime = 'yes';
-  for (let i = number; i >= 2; i -= 1) {
-    if (number % i === 0 && !(validPrimeDividers.includes(i))) {
-      isPrime = 'no';
+const isPrime = (int) => {
+  const validPrimeDividers = [1, int];
+  let result = true;
+  for (let i = int; i >= 2; i -= 1) {
+    if (int % i === 0 && !(validPrimeDividers.includes(i))) {
+      result = false;
       break;
     }
   }
-  const correctAnswer = isPrime;
+
+  return result;
+};
+
+const getRoundData = () => {
+  const number = getRandomNumber(2, 100);
+  const questionContent = number;
+  const correctAnswer = isPrime(number) ? 'yes' : 'no';
 
   return [questionContent, correctAnswer];
 };
 
 const play = () => {
-  runGame(description, getQuestionAttrs);
+  runGame(description, getRoundData);
 };
 
 export default play;
