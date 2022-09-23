@@ -17,13 +17,11 @@ const runGame = (description, getRoundData) => {
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${userName}!`);
-      return; // мы размазали логику вывода итогового сообщения по разным местам кода
+      return;
     }
   }
 
-  if (correctAnswersCount === neededAnswersCount) {
-    console.log(`Congratulations, ${userName}!`);
-  }
+  console.log(`Congratulations, ${userName}!`);
 };
 
 export default runGame;
