@@ -9,13 +9,13 @@
 - [brain-prime](https://asciinema.org/a/522891) - guess if the number is prime
 
 ## Installation
-Copy the repo, then run `make install` within project folder:
+Use Makefile within project folder:
 ```shell script
 make install
 ```
 
 ## Running
-Call a game name in terminal to run a game
+Call the game name in terminal to run it
 ```shell script
 brain-even
 ```
