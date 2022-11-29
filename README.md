@@ -2,11 +2,11 @@
 <a href="https://codeclimate.com/github/marat-y/frontend-project-44/maintainability"><img src="https://api.codeclimate.com/v1/badges/9f9b46eb428c8cf667be/maintainability" /></a>
 
 ## Games
-- [brain-even](https://asciinema.org/a/522468) - answer if the number is even
-- [brain-calc](https://asciinema.org/a/522875) - solve the math expression
-- [brain-gdc](https://asciinema.org/a/522881) - guess the biggest common divider of two numbers
-- [brain-progression](https://asciinema.org/a/522890) - guess the number missing in progression
-- [brain-prime](https://asciinema.org/a/522891) - guess if the number is prime
+- [brain-even](https://asciinema.org/a/522468) - answer if a number is even
+- [brain-calc](https://asciinema.org/a/522875) - solve a math expression
+- [brain-gdc](https://asciinema.org/a/522881) - guess a biggest common divider of two numbers
+- [brain-progression](https://asciinema.org/a/522890) - guess a number missing in progression
+- [brain-prime](https://asciinema.org/a/522891) - guess if a number is prime
 
 ## Installation
 Use Makefile within project folder:
